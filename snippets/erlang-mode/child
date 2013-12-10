@@ -1,0 +1,5 @@
+#contributor : jtmoulia <jtmoulia@gmail.com>
+#name : ?CHILD
+# key : ?CHILD
+# --
+?CHILD($1, [$2], ${3:$$(yas/choose-value '("supervisor" "worker"))})$0

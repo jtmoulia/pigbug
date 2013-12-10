@@ -1,0 +1,5 @@
+#contributor : jtmoulia <jtmoulia@gmail.com>
+#name : define CHILD
+# key : -define(CHILD
+# --
+-define(CHILD(I, Args, Type), {I, {I, start_link, Args}, permanent, 10000, Type, [I]}).
