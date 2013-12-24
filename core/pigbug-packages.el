@@ -19,7 +19,7 @@
 (package-initialize)
 
 (defvar pigbug-packages
-  '(ack-and-a-half helm magit projectile flycheck
+  '(ack-and-a-half magit projectile flycheck
     solarized-theme)
   "A list of packages to ensure are isntalled at launch")
 
