@@ -40,10 +40,14 @@
 (define-key sp-keymap (kbd "M-b") 'sp-backward-slurp-sexp)
 
 ;; Backup and save everything to the same dir
+;; Warning -- not autosaving
+(setq auto-save-default nil)
 (setq backup-directory-alist
       `((".*" . ,pigbug-backup-dir)))
 (setq auto-save-file-name-transforms
       `((".*" ,pigbug-auto-save-dir t)))
+(setq auto-save-list-file-prefix
+      pigbug-auto-save-dir)
 
 (provide 'pigbug-editing)
 ;;; pigbug-editing.el ends here

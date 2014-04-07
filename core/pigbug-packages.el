@@ -11,17 +11,20 @@
 (require 'cl)
 
 (add-to-list 'package-archives
-	     ;'("melpa" . "http://melpa.milkbox.net/packages/")
 	     '("marmalade" . "http://marmalade-repo.org/packages/")
 	     t)
 
-(setq package-user-dir (expand-file-name "elpa"))
+(add-to-list 'package-archives
+	     '("melpa" . "http://melpa.milkbox.net/packages/")
+	     t)
+
+(setq package-user-dir (expand-file-name "elpa" pigbug-root-dir))
 (package-initialize)
 
 (defvar pigbug-packages
-  '(ack-and-a-half magit projectile flycheck
+  '(ack-and-a-half projectile flycheck
     solarized-theme)
-  "A list of packages to ensure are isntalled at launch")
+  "A list of packages to ensure are installed at launch")
 
 (defun pigbug-require-package (package)
   "Install PACKAGE unless already installed."
@@ -34,6 +37,25 @@
 
 (package-refresh-contents)
 (pigbug-require-packages pigbug-packages)
+
+;;; el-get
+
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+    (goto-char (point-max))
+    (eval-print-last-sexp)))
+
+(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+(setq el-get-sources
+  '(el-get
+    distel
+    cider))
+
+(el-get 'sync)
 
 (provide 'pigbug-packages)
 ;;; prelude-packages.el ends here
