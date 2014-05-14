@@ -8,11 +8,11 @@
                  (or (buffer-file-name) (buffer-name))))`}).
 -behaviour(gen_server).
 
-%% Interface exports
+%% Interface exports.
 -export([start_link/0,
          stop/1]).
 
-%% Callback exports
+%% Callback exports.
 -export([init/1,
          handle_call/3,
          handle_cast/2,
@@ -20,21 +20,31 @@
          code_change/3,
          terminate/2]).
 
-%% Records
+%% Records.
 -record(state, {}).
 
+
 %%==============================================================================
-%% Interface exports
+%% Interface exports.
 %%==============================================================================
 
+
+%% @doc Start the gen_server as part of the supervision tree.
+-spec start_link() ->
+    {ok, pid()}.
 start_link() ->
     gen_server:start_link(?MODULE, no_args, []).
 
+
+%% @doc Command the process to stop itself.
+-spec stop(pid()) ->
+    ok.
 stop(Pid) ->
     gen_server:cast(Pid, stop).
 
+
 %%==============================================================================
-%% Callback exports
+%% Callback exports.
 %%==============================================================================
 
 init(no_args) ->
@@ -60,5 +70,3 @@ terminate(_Reason, _State) ->
 %%==============================================================================
 %% Internal functions
 %%==============================================================================
-
-

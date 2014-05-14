@@ -39,6 +39,7 @@
 (require 'pigbug-editing)
 (require 'pigbug-email)
 (require 'pigbug-magit)
+(require 'pigbug-eshell)
 
 ;; Lang specific
 (require 'pigbug-erlang)

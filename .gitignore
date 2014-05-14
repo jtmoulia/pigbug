@@ -1,9 +1,17 @@
+# Package Management
 elpa/
+el-get/
+
 saves/
 url/
 eshell/
 auto-save-list/
 
+tramp
 ac-comphist.dat
+request/curl-cookie-jar
+
+# Projectile
 projectile-bookmarks.eld
 .projectile*
+projectile.cache

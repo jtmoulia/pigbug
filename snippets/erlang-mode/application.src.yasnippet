@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: application.src
+# key: app.src
+# --
+%% -*- mode: erlang -*-
+{application, $1,
+ [
+  {description, "${2:Description}"},
+  {vsn, "${3:0.1.0}"},
+  {modules, []},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, {$4, []}},
+  {env, []}
+ ]}.
