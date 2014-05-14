@@ -11,6 +11,8 @@
 (set-variable 'inhibit-startup-screen t)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+(menu-bar-mode -1)
+
 ;; Automatically revert buffer when file is changed
 (global-auto-revert-mode +1)
 
@@ -19,7 +21,6 @@
 ;; Projectile. Everywhere.
 (projectile-mode +1)
 (projectile-global-mode)
-
 
 ;; Show trailing whitespace + ☣tabs everywhere
 (set-variable 'whitespace-style
