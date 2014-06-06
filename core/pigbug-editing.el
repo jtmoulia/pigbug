@@ -11,6 +11,9 @@
 ;; Evil
 (pigbug-require-package 'evil)
 (evil-mode +1)
+(setq evil-want-fine-undo t)
+(setq evil-default-cursor t)
+(set-cursor-color "#ffa500")
 
 ;; Flycheck
 (pigbug-require-package 'flycheck)
@@ -21,8 +24,8 @@
 (yas-global-mode +1)
 
 ;; smartparens
-(pigbug-require-package 'smartparens)
-(smartparens-global-mode +1)
+;(pigbug-require-package 'smartparens)
+;(smartparens-global-mode +1)
 (show-smartparens-global-mode +1)
 ;; No highlighting
 (set-variable 'sp-highlight-pair-overlay nil)

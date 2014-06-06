@@ -11,10 +11,14 @@
 (set-variable 'inhibit-startup-screen t)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;; No tool bars or menu bars or scroll bars
 (menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
 
 ;; Automatically revert buffer when file is changed
 (global-auto-revert-mode +1)
+(set-variable 'auto-revert-verbose nil)
 
 (ido-mode +1)
 

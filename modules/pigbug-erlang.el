@@ -8,6 +8,7 @@
 (pigbug-require-package 'erlang)
 
 (add-to-list 'auto-mode-alist '("\\.erl\\'" . erlang-mode))
+(add-to-list 'auto-mode-alist '("\\.hrl\\'" . erlang-mode))
 
 ;; Tabs: Just say no
 (add-hook 'erlang-mode-hook '(lambda() (setq indent-tabs-mode nil)))

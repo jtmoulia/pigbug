@@ -5,7 +5,7 @@
 
 ;;; Code:
 ; Rebind gives eshell some niceties -- TODO evil
-(add-to-list 'eshell-modules-list 'eshell-rebind)
+; (add-to-list 'eshell-modules-list 'eshell-rebind)
 
 (provide 'pigbug-eshell)
 ;;; pigbug-eshell.el ends here
