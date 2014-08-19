@@ -5,6 +5,12 @@
 
 ;;; Code:
 
+;; Set Python path using homebrew
+;; TODO add a homebrew flag
+(setenv "PYTHONPATH" (concat
+		      (pigbug-chomp (shell-command-to-string "brew --prefix"))
+		      "/lib/python2.7/site-packages"))
+
 ;; Love ipython
 (setq
  python-shell-interpreter "ipython"
@@ -17,6 +23,7 @@
    "';'.join(module_completion('''%s'''))\n"
  python-shell-completion-string-code
    "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
+
 
 ;; Python's Jedi Mind Tricks
 (pigbug-require-package 'epc)

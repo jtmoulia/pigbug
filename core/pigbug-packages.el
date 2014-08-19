@@ -22,8 +22,8 @@
 (package-initialize)
 
 (defvar pigbug-packages
-  '(ack-and-a-half projectile flycheck
-    solarized-theme)
+  '(ack-and-a-half projectile flycheck zenburn-theme
+    solarized-theme mu4e-maildirs-extension)
   "A list of packages to ensure are installed at launch")
 
 (defun pigbug-require-package (package)

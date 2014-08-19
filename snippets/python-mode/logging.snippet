@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: logging
+# key: logging
+# --
+import logging
+logging.basicConfig(level=logging.${1:INFO})
+logger = logging.getLogger(__name__)
+$0

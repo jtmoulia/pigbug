@@ -5,15 +5,17 @@
 
 ;;; Code:
 
-;; Good parens
-;(show-paren-mode +1)
-
 ;; Evil
 (pigbug-require-package 'evil)
 (evil-mode +1)
-(setq evil-want-fine-undo t)
-(setq evil-default-cursor t)
+(setq evil-want-fine-undo t
+      evil-default-cursor t)
 (set-cursor-color "#ffa500")
+(setq indent-tabs-mode nil)
+
+;; Theme
+(setq custom-safe-themes t) ; Dangerous, but zenburn is being a pain
+(load-theme 'zenburn)
 
 ;; Flycheck
 (pigbug-require-package 'flycheck)
@@ -51,6 +53,12 @@
       `((".*" ,pigbug-auto-save-dir t)))
 (setq auto-save-list-file-prefix
       pigbug-auto-save-dir)
+
+(defun unfill-paragraph ()
+  "Unfill paragraph at or after point."
+  (interactive "*")
+  (let ((fill-column most-positive-fixnum))
+    (fill-paragraph nil (region-active-p))))
 
 (provide 'pigbug-editing)
 ;;; pigbug-editing.el ends here

@@ -8,6 +8,9 @@
 
 ;;; Code:
 
+;; Update the path
+(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+
 (set-variable 'inhibit-startup-screen t)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -43,6 +46,15 @@
 	;newline-mark
 	))
 (global-whitespace-mode +1)
+
+;;; Helpers
+(defun pigbug-chomp (str)
+      "Chomp leading and tailing whitespace from STR."
+      (replace-regexp-in-string (rx (or (: bos (* (any " \t\n")))
+                                        (: (* (any " \t\n")) eos)))
+                                ""
+                                str))
+
 
 (provide 'pigbug-core)
 ;;; pigbug-core.el ends here

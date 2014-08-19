@@ -2,11 +2,7 @@
 # name: supervisor
 # key: supervisor
 # --
-%% @doc
--module(${1:`(file-name-nondirectory
-               (file-name-sans-extension
-                 (or (buffer-file-name) (buffer-name))))`}).
--behaviour(supervisor).
+$0-behaviour(supervisor).
 
 %% Interface exports
 -export([start_link/0]).

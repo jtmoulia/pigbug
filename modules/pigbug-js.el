@@ -8,7 +8,7 @@
 (defun pigbug-standard-js-env ()
   "Set up my standard javascript env."
   (setq indent-tabs-mode nil)
-  (setq js-indent-level 2))
+  (setq js-indent-level 4))
 
 (add-hook 'javascript-mode 'pigbug-standard-js-env)
 

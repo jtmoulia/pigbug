@@ -5,7 +5,7 @@
 
 ;;; Code:
 
-(add-to-list 'auto-mode-alist '("\\.mardkown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
 (provide 'pigbug-markdown)
 ;;; pigbug-markdown.el ends here
