@@ -10,20 +10,27 @@
 (require 'package)
 (require 'cl)
 
+;; add archives
 (add-to-list 'package-archives
-	     '("marmalade" . "http://marmalade-repo.org/packages/")
-	     t)
-
+             '("marmalade" . "http://marmalade-repo.org/packages/")
+             t)
 (add-to-list 'package-archives
-	     '("melpa" . "http://melpa.milkbox.net/packages/")
-	     t)
+             '("melpa" . "http://melpa.org/packages/")
+             t)
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 
 (setq package-user-dir (expand-file-name "elpa" pigbug-root-dir))
 (package-initialize)
 
 (defvar pigbug-packages
-  '(ack-and-a-half projectile flycheck zenburn-theme
-    solarized-theme mu4e-maildirs-extension)
+  '(ack-and-a-half
+    projectile
+    flycheck
+    zenburn-theme
+    solarized-theme
+    mu4e-maildirs-extension
+    dash
+    diminish)
   "A list of packages to ensure are installed at launch")
 
 (defun pigbug-require-package (package)

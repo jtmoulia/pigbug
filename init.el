@@ -6,8 +6,11 @@
 
 ;;; Code:
 
+
+;; Set environment variables and exec path
 (setenv "EDITOR" "emacsclient")
 (setenv "GIT_EDITOR" "emacsclient")
+(add-to-list 'exec-path "/usr/local/bin")
 
 (defvar pigbug-root-dir (file-name-directory load-file-name)
   "Root dir of the pigbug.")
@@ -29,7 +32,6 @@
 
 (pigbug-ensure-path pigbug-save-dir)
 
-(add-to-list 'load-path pigbug-root-dir)
 (add-to-list 'load-path pigbug-core-dir)
 (add-to-list 'load-path pigbug-modules-dir)
 
@@ -37,11 +39,14 @@
 (require 'pigbug-packages)
 (require 'pigbug-core)
 (require 'pigbug-editing)
+(require 'pigbug-global-keybindings)
 (require 'pigbug-email)
 (require 'pigbug-magit)
+;; (require 'pigbug-irc)
 (require 'pigbug-eshell)
 
-;; Lang specific
+;; Modules
+(require 'pigbug-evil)
 (require 'pigbug-erlang)
 (require 'pigbug-elixir)
 (require 'pigbug-python)
@@ -52,19 +57,4 @@
 (require 'pigbug-js)
 (require 'pigbug-sass)
 (require 'pigbug-markdown)
-
-
-;;; init.el ends here
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("3b819bba57a676edf6e4881bd38c777f96d1aa3b3b5bc21d8266fa5b0d0f1ebf" "146d24de1bb61ddfa64062c29b5ff57065552a7c4019bee5d869e938782dfc2a" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "dd4db38519d2ad7eb9e2f30bc03fba61a7af49a185edfd44e020aa5345e3dca7" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "e16a771a13a202ee6e276d06098bc77f008b73bbac4d526f160faa2d76c1dd0e" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)

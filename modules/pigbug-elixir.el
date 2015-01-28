@@ -13,5 +13,7 @@
 	     (set-variable 'indent-tabs-mode nil)
 	     (setq tab-width 2)))
 
+;; Override default checker to use git root
+
 (provide 'pigbug-elixir)
 ;;; pigbug-elixir.el ends here

@@ -5,13 +5,9 @@
 
 ;;; Code:
 
-;; Evil
-(pigbug-require-package 'evil)
-(evil-mode +1)
-(setq evil-want-fine-undo t
-      evil-default-cursor t)
-(set-cursor-color "#ffa500")
+;; TODO set it as a global variable
 (setq indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
 
 ;; Theme
 (setq custom-safe-themes t) ; Dangerous, but zenburn is being a pain
