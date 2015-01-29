@@ -6,7 +6,9 @@ saves/
 url/
 eshell/
 auto-save-list/
+tutorial/
 
+bookmarks
 tramp
 ac-comphist.dat
 request/curl-cookie-jar

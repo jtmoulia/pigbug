@@ -208,5 +208,16 @@ Works for American formatted date strings, e.g. MM/DD/YYYY"
   (time-less-p (pigbug-date-to-time date1)
                (pigbug-date-to-time date2)))
 
+
+(defun pigbug-WORD-string ()
+  "Return the WORD (vim style) the cursor is on as a string."
+  (let ((beg (save-excursion
+              (skip-syntax-backward "^ ")
+              (point)))
+        (end (save-excursion
+              (skip-syntax-forward "^ ")
+              (point))))
+    (buffer-substring-no-properties beg end)))
+
 (provide 'pigbug-core)
 ;;; pigbug-core.el ends here

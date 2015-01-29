@@ -57,4 +57,10 @@
 (require 'pigbug-js)
 (require 'pigbug-sass)
 (require 'pigbug-markdown)
+(require 'pigbug-org)
+
 (put 'upcase-region 'disabled nil)
+
+(provide 'init)
+;;; init.el ends here
+(put 'narrow-to-region 'disabled nil)
