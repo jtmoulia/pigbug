@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name : Knitr Figure Source Code Block
+# contributor : Alexander Jerneck <ajerneck@sas.upenn.edu>
+# key: kf
+# --
+#+BEGIN_LATEX
+<<fig_$1, echo=${2:$$(yas/choose-value '("FALSE" "TRUE"))}, cache=${3:$$(yas/choose-value '("TRUE" "FALSE"))}, fig.cap="$4">>=
+$0
+@
+#+END_LATEX

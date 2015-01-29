@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# key: docbook
+#name : DOCBOOK
+#contributor : Rick Moynihan <rick@sourcesmouth.co.uk>
+# --
+#+begin_docbook
+${0}
+#+end_docbook

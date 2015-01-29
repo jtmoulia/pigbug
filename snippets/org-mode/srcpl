@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# key: srcpl
+#name : Perl Source Code Block
+#contributor : Martyn Jago <martyn.jago@btinternet.com>
+# --
+#+begin_src perl
+$0$>
+#+end_src$>

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Configuration Mode Source
+# key: srcini
+# --
+#+begin_src conf
+$0
+#+end_src

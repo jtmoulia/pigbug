@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: File Based Property
+# key: fprop
+# --
+#+property: $1
+$0

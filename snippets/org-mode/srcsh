@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# key: srcsh
+#name : Shell Source Code Block
+#contributor : Martyn Jago <martyn.jago@btinternet.com>
+# --
+#+begin_src sh
+$0$>
+#+end_src$>

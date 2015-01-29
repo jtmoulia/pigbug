@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: tag
+# condition: (or (= (current-column) 3) (= (current-column) 0))
+#name : Tags
+#contributor : Rick Moynihan <rick@sourcesmouth.co.uk>
+# --
+#+TAGS: $0
