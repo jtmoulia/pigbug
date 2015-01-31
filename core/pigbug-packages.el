@@ -24,8 +24,11 @@
 
 (defvar pigbug-packages
   '(ack-and-a-half
+    helm
     projectile
+    helm-projectile
     flycheck
+    undo-tree
     zenburn-theme
     solarized-theme
     mu4e-maildirs-extension

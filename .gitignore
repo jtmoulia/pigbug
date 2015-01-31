@@ -12,6 +12,7 @@ bookmarks
 tramp
 ac-comphist.dat
 request/curl-cookie-jar
+.yas-compiled-snippets.el
 
 # Projectile
 projectile-bookmarks.eld

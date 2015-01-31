@@ -17,19 +17,20 @@
 ;; No tool bars or menu bars or scroll bars
 (menu-bar-mode -1)
 (tool-bar-mode -1)
-(scroll-bar-mode -1)
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
 (setq load-prefer-newer t)
 
-;; mode bar
+;; Highlight the line the point is on -- good for tables and finding
+;; the damn cursor
+(global-hl-line-mode +1)
 
+;; mode bar
 (column-number-mode +1)
 
 ;; Automatically revert buffer when file is changed
 (global-auto-revert-mode +1)
 (set-variable 'auto-revert-verbose nil)
-
-(ido-mode +1)
 
 ;; Helm mode
 (global-set-key (kbd "M-x") 'helm-M-x)
