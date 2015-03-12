@@ -11,7 +11,19 @@
 
 ;; Theme
 (setq custom-safe-themes t) ; Dangerous, but zenburn is being a pain
-(load-theme 'zenburn)
+(load-theme 'monokai)
+
+;; Adjust ansi colors to work with a dark background
+(setq ansi-color-names-vector
+      ["gray"              ;; black
+       "tomato"            ;; red
+       "PaleGreen2"        ;; green
+       "gold1"             ;; yellow
+       "DeepSkyBlue1"      ;; blue
+       "MediumOrchid1"     ;; magenta
+       "cyan"              ;; cyan
+       "gray90"]            ;; white
+      ansi-color-map (ansi-color-make-color-map))
 
 ;; Flycheck
 (pigbug-require-package 'flycheck)

@@ -64,7 +64,7 @@
 
 ;; Diminish those minor modes
 
-(diminish 'undo-tree-mode)
+; (diminish 'undo-tree-mode)
 (diminish 'whitespace-mode)
 (diminish 'global-whitespace-mode)
 (diminish 'projectile-mode)
@@ -219,6 +219,13 @@ Works for American formatted date strings, e.g. MM/DD/YYYY"
               (skip-syntax-forward "^ ")
               (point))))
     (buffer-substring-no-properties beg end)))
+
+
+(defun pigbug-get-string-from-file (filepath)
+  "Return FILEPATH's file content."
+  (with-temp-buffer
+    (insert-file-contents filepath)
+    (buffer-string)))
 
 (provide 'pigbug-core)
 ;;; pigbug-core.el ends here

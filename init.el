@@ -18,6 +18,8 @@
   "Core elisp for the pigbug.")
 (defvar pigbug-modules-dir (expand-file-name "modules" pigbug-root-dir)
   "Assorted elisp for the pigbug.")
+(defvar pigbug-bin-dir (expand-file-name "bin" pigbug-root-dir)
+  "Assorted elisp for the pigbug.")
 (defvar pigbug-save-dir (expand-file-name "saves" pigbug-root-dir)
   "Savefile dir for the pigbug.")
 (defvar pigbug-backup-dir (expand-file-name "backups" pigbug-save-dir)

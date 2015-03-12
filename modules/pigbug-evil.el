@@ -46,5 +46,8 @@
        "j" 'evil-next-line
        "RET" 'mu4e-view-message)))
 
+;; compile-mode evil config
+(evil-make-overriding-map compilation-mode-map 'normal t)
+(evil-add-hjkl-bindings compilation-mode-map 'normal)
 (provide 'pigbug-evil)
 ;;; pigbug-evil.el ends here

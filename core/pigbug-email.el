@@ -36,17 +36,7 @@
 (setq mu4e-user-mail-address-list
       '("jtmoulia@pocketknife.io"
         "jtmoulia@gmail.com"
-	"thomas@spatch.co"))
-
-;; org contacts (wip)
-;; TODO - move this over to pigbug-org.el
-(require 'org-contacts)
-(add-to-list 'org-capture-templates
-             '("c" "Contacts" entry (file "~/Dropbox/contacts.org")
-               "* %(org-contacts-template-name)
-  :PROPERTIES:
-  :EMAIL: %(org-contacts-template-email)
-  :END:"))
+        "thomas@spatch.co"))
 
 (setq mu4e-org-contacts-file
       (expand-file-name "~/Dropbox/contacts.org"))
@@ -74,12 +64,13 @@
 ;; multiple accounts
 (setq pigbug-mu4e-accounts-config
       '(("pocketknife"
-         (user-mail-address   "jtmoulia@pocketknife.io")
-         (mu4e-inbox-folder   "/pocketknife/INBOX")
-         (mu4e-sent-folder    "/pocketknife/INBOX.Sent Items")
-         (mu4e-drafts-folder  "/pocketknife/INBOX.Drafts")
-         (mu4e-trash-folder   "/pocketknife/INBOX.Trash")
-         (mu4e-refile-folder  "/pocketknife/INBOX.Archive")
+         (user-mail-address  "jtmoulia@pocketknife.io")
+         (mu4e-inbox-folder  "/pocketknife/INBOX")
+         (mu4e-sent-folder   "/pocketknife/INBOX.Sent Items")
+         (mu4e-drafts-folder "/pocketknife/INBOX.Drafts")
+         (mu4e-trash-folder  "/pocketknife/INBOX.Trash")
+         (mu4e-refile-folder "/pocketknife/INBOX.Archive")
+         (smtpmail-smtp-user "jtmoulia@pocketknife.io")
          (smtpmail-default-smtp-server "mail.messagingengine.com")
          (smtpmail-smtp-server "mail.messagingengine.com")
          (smtpmail-smtp-service 465))
@@ -90,6 +81,7 @@
          (mu4e-drafts-folder "/gmail/[Gmail].Drafts")
          (mu4e-trash-folder  "/gmail/[Gmail].Trash")
          (mu4e-refile-folder "/gmail/[Gmail].Archive")
+         (smtpmail-smtp-user "jtmoulia@gmail.com")
          (smtpmail-default-smtp-server "smtp.gmail.com")
          (smtpmail-smtp-server "smtp.gmail.com")
          (smtpmail-smtp-service 465))
@@ -100,6 +92,7 @@
          (mu4e-drafts-folder "/spatch/[Gmail].Drafts")
          (mu4e-trash-folder  "/spatch/[Gmail].Trash")
          (mu4e-refile-folder "/spatch/[Gmail].Archive")
+         (smtpmail-smtp-user "thomas@spatch.co")
          (smtpmail-default-smtp-server "smtp.gmail.com")
          (smtpmail-smtp-server "smtp.gmail.com")
          (smtpmail-smtp-service 465))))
@@ -195,6 +188,16 @@
                                       'mu4e-trash-folder)))
 
 (add-hook 'mu4e-compose-pre-hook 'pigbug-mu4e-set-account)
+
+
+;;; org-mode stuff -- assumes org-mode is installed
+
+;; Currently stupid -- links to the entire email
+;; (add-hook 'org-store-link-functions 'org-mu4e:view-store-link)
+;; (defun org-mu4e:view-store-link ()
+;;   :ok)
+
+
 
 (provide 'pigbug-email)
 ;;; pigbug-email.el ends here

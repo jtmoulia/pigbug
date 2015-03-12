@@ -7,11 +7,17 @@
 
 (pigbug-require-package 'elixir-mode)
 
+(defun pigbug-elixir-hook ()
+  "Elixir hook."
+  (let ((width 2))
+    (alchemist-mode +1)
+    (set-variable 'indent-tabs-mode nil)
+    (electric-indent-mode 0)
+    (setq tab-width width)
+    (setq evil-shift-width width)))
+
 ;; Tabs: Just say no
-(add-hook 'elixir-mode-hook
-          '(lambda()
-             (set-variable 'indent-tabs-mode nil)
-             (setq tab-width 2)))
+(add-hook 'elixir-mode-hook 'pigbug-elixir-hook)
 
 
 (defun pigbug-elixir-open-file (filename)
