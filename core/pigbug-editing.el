@@ -15,14 +15,14 @@
 
 ;; Adjust ansi colors to work with a dark background
 (setq ansi-color-names-vector
-      ["gray"              ;; black
+      ["gray40"            ;; black
        "tomato"            ;; red
-       "PaleGreen2"        ;; green
+       "green"             ;; green
        "gold1"             ;; yellow
        "DeepSkyBlue1"      ;; blue
        "MediumOrchid1"     ;; magenta
        "cyan"              ;; cyan
-       "gray90"]            ;; white
+       "gray94"]           ;; white
       ansi-color-map (ansi-color-make-color-map))
 
 ;; Flycheck

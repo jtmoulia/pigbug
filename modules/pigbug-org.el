@@ -18,9 +18,14 @@
 
 (org-babel-do-load-languages
  'org-babel-load-languages (quote ((emacs-lisp . t)
-                                    (sqlite . t)
-                                    (python . t)
-                                    (plantuml . t))))
+                                   (latex . t)
+                                   (sqlite . t)
+                                   (python . t)
+                                   (plantuml . t)
+                                   (mscgen . t)
+                                   (ditaa . t)
+                                   ; (elixir . t)
+                                   )))
 
 
 ;; http://www.newartisans.com/2007/08/using-org-mode-as-a-day-planner/
